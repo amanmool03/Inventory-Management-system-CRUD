@@ -1,0 +1,115 @@
+﻿@model IEnumerable<Inventory_Management_System.Models.Purchase>
+
+@{
+    ViewBag.Title = "DisplayPurchase";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DisplayPurchase</h2>
+
+<p>
+    @Html.ActionLink("Create New", "PurchaseProduct","Purchase",new { @class="btn btn-primary"})
+</p>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Purchased Product ")
+        </th>
+        <th>
+            @Html.DisplayName("Purchased Quantity ")
+        </th>
+        <th>
+            @Html.DisplayName("Purchased Date ")
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purchase_prod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purchase_qnty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purchase_date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", "Purchase", new { id = item.id }, new { @class = "btn btn-primary" }) 
+            @Html.ActionLink("Details", "Detail", "Purchase", new { id = item.id }, new { @class = "btn btn-success" }) 
+            @Html.ActionLink("Delete", "Delete", "Purchase", new { id = item.id }, new { @class = "btn btn-danger" })
+            </td>
+    </tr>
+}
+
+</table>
+*@
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Latest Transaction</h4>
+                <div class="table-responsive">
+                    <table class="table align-middle table-nowrap mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width: 20px;">
+                                    <div class="form-check font-size-16 align-middle">
+                                        <input class="form-check-input" type="checkbox" id="transactionCheck01">
+                                        <label class="form-check-label" for="transactionCheck01"></label>
+                                    </div>
+                                </th>
+
+                                <th>
+                                    @Html.DisplayName("Purchased Product ")
+                                </th>
+                                <th>
+                                    @Html.DisplayName("Purchased Quantity ")
+                                </th>
+                                <th>
+                                    @Html.DisplayName("Purchased Date ")
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    <div class="form-check font-size-16">
+                                        <input class="form-check-input" type="checkbox" id="transactionCheck02">
+                                        <label class="form-check-label" for="transactionCheck02"></label>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Purchase_prod)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Purchase_qnty)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Purchase_date)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", "Purchase", new { id = item.id }, new { @class = "btn btn-primary" })
+                                    @Html.ActionLink("Details", "Details", "Purchase", new { id = item.id }, new { @class = "btn btn-success" })
+                                    @Html.ActionLink("Delete", "Delete", "Purchase", new { id = item.id }, new { @class = "btn btn-danger" })
+                                </td>
+
+                            </tr>
+                            }
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- end table-responsive -->
+            </div>
+        </div>
+    </div>
+</div>
